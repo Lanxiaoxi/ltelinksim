@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<main>
+    <downlink>
+        <cellid>2</cellid>
+        <bandwidth>25</bandwidth>
+        <crsport>1</crsport>
+        <frame>0</frame>
+        <subframe>0</subframe>
+        <ctrl_region_sym>2</ctrl_region_sym>
+        <cptype>normal</cptype><!--    normal or extended    -->
+        <phichr>1</phichr><!--   1/6 1/2 1 2     -->
+        <phichd>normal</phichd><!--    normal or extended    -->
+        <tm>0</tm>
+    </downlink>
+</main>

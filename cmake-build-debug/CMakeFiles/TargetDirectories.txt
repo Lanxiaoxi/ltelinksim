@@ -1,3 +1,12 @@
 C:/code/lte_link_sim/cmake-build-debug/CMakeFiles/lte_link_sim.dir
 C:/code/lte_link_sim/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/code/lte_link_sim/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/code/lte_link_sim/cmake-build-debug/sim_init/src/CMakeFiles/sim_init_lib.dir
+C:/code/lte_link_sim/cmake-build-debug/sim_init/src/CMakeFiles/edit_cache.dir
+C:/code/lte_link_sim/cmake-build-debug/sim_init/src/CMakeFiles/rebuild_cache.dir
+C:/code/lte_link_sim/cmake-build-debug/sim_core/src/CMakeFiles/sim_core_lib.dir
+C:/code/lte_link_sim/cmake-build-debug/sim_core/src/CMakeFiles/edit_cache.dir
+C:/code/lte_link_sim/cmake-build-debug/sim_core/src/CMakeFiles/rebuild_cache.dir
+C:/code/lte_link_sim/cmake-build-debug/3rd/src/CMakeFiles/edit_cache.dir
+C:/code/lte_link_sim/cmake-build-debug/3rd/src/CMakeFiles/3rd_lib.dir
+C:/code/lte_link_sim/cmake-build-debug/3rd/src/CMakeFiles/rebuild_cache.dir
