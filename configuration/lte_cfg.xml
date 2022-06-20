@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <main>
+    <sys>LTE</sys>
     <downlink>
+        <totalsf>10</totalsf>
         <cellid>2</cellid>
         <bandwidth>25</bandwidth>
         <crsport>1</crsport>
@@ -11,5 +13,11 @@
         <phichr>1</phichr><!--   1/6 1/2 1 2     -->
         <phichd>normal</phichd><!--    normal or extended    -->
         <tm>0</tm>
+        <!--  pdsch      -->
+        <datatype>ALL1</datatype>
+        <prbset>0:5</prbset> <!--  start RB : end RB index      -->
+        <mcs1>1</mcs1>
+        <mcs2>2</mcs2>
+        <layer>1</layer>
     </downlink>
 </main>

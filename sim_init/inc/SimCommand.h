@@ -13,17 +13,16 @@
 
 class SimCommand {
 public:
-    SimCommand(std::shared_ptr<ConfigurationFile> configurationFile);
-
-    bool SimCommandInit();
-
-private:
     std::shared_ptr<ConfigurationFile> configuration_file_;
+
     TransmiterSimElement transmiter_;
     ChannelSimElement channel_;
     ReciverSimElement reciver_;
     CommonSimElement common_;
 
+public:
+    SimCommand(std::shared_ptr<ConfigurationFile> configurationFile);
+    bool SimCommandInit();
 };
 
 

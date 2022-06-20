@@ -49,6 +49,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("C:/code/lte_link_sim/cmake-build-debug/sim_lte/src/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("C:/code/lte_link_sim/cmake-build-debug/3rd/src/cmake_install.cmake")
 endif()
 

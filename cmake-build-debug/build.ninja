@@ -47,21 +47,14 @@ cmake_ninja_workdir = C$:/code/lte_link_sim/cmake-build-debug/
 #############################################
 # Order-only phony target for lte_link_sim
 
-build cmake_object_order_depends_target_lte_link_sim: phony || cmake_object_order_depends_target_3rd_lib cmake_object_order_depends_target_sim_core_lib cmake_object_order_depends_target_sim_init_lib
+build cmake_object_order_depends_target_lte_link_sim: phony || cmake_object_order_depends_target_3rd_lib cmake_object_order_depends_target_sim_core_lib cmake_object_order_depends_target_sim_init_lib cmake_object_order_depends_target_sim_lte_lib
 
 build CMakeFiles/lte_link_sim.dir/test/main.cpp.obj: CXX_COMPILER__lte_link_sim_Debug C$:/code/lte_link_sim/test/main.cpp || cmake_object_order_depends_target_lte_link_sim
   DEP_FILE = CMakeFiles\lte_link_sim.dir\test\main.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = CMakeFiles\lte_link_sim.dir
   OBJECT_FILE_DIR = CMakeFiles\lte_link_sim.dir\test
-
-build CMakeFiles/lte_link_sim.dir/sim_core/src/SimEntity.cpp.obj: CXX_COMPILER__lte_link_sim_Debug C$:/code/lte_link_sim/sim_core/src/SimEntity.cpp || cmake_object_order_depends_target_lte_link_sim
-  DEP_FILE = CMakeFiles\lte_link_sim.dir\sim_core\src\SimEntity.cpp.obj.d
-  FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
-  OBJECT_DIR = CMakeFiles\lte_link_sim.dir
-  OBJECT_FILE_DIR = CMakeFiles\lte_link_sim.dir\sim_core\src
 
 
 # =============================================================================
@@ -71,9 +64,9 @@ build CMakeFiles/lte_link_sim.dir/sim_core/src/SimEntity.cpp.obj: CXX_COMPILER__
 #############################################
 # Link the executable lte_link_sim.exe
 
-build lte_link_sim.exe: CXX_EXECUTABLE_LINKER__lte_link_sim_Debug CMakeFiles/lte_link_sim.dir/test/main.cpp.obj CMakeFiles/lte_link_sim.dir/sim_core/src/SimEntity.cpp.obj | sim_core/src/libsim_core_lib.a sim_init/src/libsim_init_lib.a 3rd/src/lib3rd_lib.a || 3rd/src/lib3rd_lib.a sim_core/src/libsim_core_lib.a sim_init/src/libsim_init_lib.a
+build lte_link_sim.exe: CXX_EXECUTABLE_LINKER__lte_link_sim_Debug CMakeFiles/lte_link_sim.dir/test/main.cpp.obj | sim_core/src/libsim_core_lib.a sim_init/src/libsim_init_lib.a sim_lte/src/libsim_lte_lib.a 3rd/src/lib3rd_lib.a || 3rd/src/lib3rd_lib.a sim_core/src/libsim_core_lib.a sim_init/src/libsim_init_lib.a sim_lte/src/libsim_lte_lib.a
   FLAGS = -g
-  LINK_LIBRARIES = sim_core/src/libsim_core_lib.a  sim_init/src/libsim_init_lib.a  3rd/src/lib3rd_lib.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = sim_core/src/libsim_core_lib.a  sim_init/src/libsim_init_lib.a  sim_lte/src/libsim_lte_lib.a  3rd/src/lib3rd_lib.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\lte_link_sim.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -121,56 +114,42 @@ build cmake_object_order_depends_target_sim_init_lib: phony || sim_init/src/CMak
 build sim_init/src/CMakeFiles/sim_init_lib.dir/ChannelSimElement.cpp.obj: CXX_COMPILER__sim_init_lib_Debug C$:/code/lte_link_sim/sim_init/src/ChannelSimElement.cpp || cmake_object_order_depends_target_sim_init_lib
   DEP_FILE = sim_init\src\CMakeFiles\sim_init_lib.dir\ChannelSimElement.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
   OBJECT_FILE_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
 
 build sim_init/src/CMakeFiles/sim_init_lib.dir/CommonSimElement.cpp.obj: CXX_COMPILER__sim_init_lib_Debug C$:/code/lte_link_sim/sim_init/src/CommonSimElement.cpp || cmake_object_order_depends_target_sim_init_lib
   DEP_FILE = sim_init\src\CMakeFiles\sim_init_lib.dir\CommonSimElement.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
   OBJECT_FILE_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
 
 build sim_init/src/CMakeFiles/sim_init_lib.dir/ConfigurationFile.cpp.obj: CXX_COMPILER__sim_init_lib_Debug C$:/code/lte_link_sim/sim_init/src/ConfigurationFile.cpp || cmake_object_order_depends_target_sim_init_lib
   DEP_FILE = sim_init\src\CMakeFiles\sim_init_lib.dir\ConfigurationFile.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
-  OBJECT_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
-  OBJECT_FILE_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
-
-build sim_init/src/CMakeFiles/sim_init_lib.dir/ENodeB.cpp.obj: CXX_COMPILER__sim_init_lib_Debug C$:/code/lte_link_sim/sim_init/src/ENodeB.cpp || cmake_object_order_depends_target_sim_init_lib
-  DEP_FILE = sim_init\src\CMakeFiles\sim_init_lib.dir\ENodeB.cpp.obj.d
-  FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
-  OBJECT_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
-  OBJECT_FILE_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
-
-build sim_init/src/CMakeFiles/sim_init_lib.dir/PDSCH.cpp.obj: CXX_COMPILER__sim_init_lib_Debug C$:/code/lte_link_sim/sim_init/src/PDSCH.cpp || cmake_object_order_depends_target_sim_init_lib
-  DEP_FILE = sim_init\src\CMakeFiles\sim_init_lib.dir\PDSCH.cpp.obj.d
-  FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
   OBJECT_FILE_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
 
 build sim_init/src/CMakeFiles/sim_init_lib.dir/ReciverSimElement.cpp.obj: CXX_COMPILER__sim_init_lib_Debug C$:/code/lte_link_sim/sim_init/src/ReciverSimElement.cpp || cmake_object_order_depends_target_sim_init_lib
   DEP_FILE = sim_init\src\CMakeFiles\sim_init_lib.dir\ReciverSimElement.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
   OBJECT_FILE_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
 
 build sim_init/src/CMakeFiles/sim_init_lib.dir/SimCommand.cpp.obj: CXX_COMPILER__sim_init_lib_Debug C$:/code/lte_link_sim/sim_init/src/SimCommand.cpp || cmake_object_order_depends_target_sim_init_lib
   DEP_FILE = sim_init\src\CMakeFiles\sim_init_lib.dir\SimCommand.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
   OBJECT_FILE_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
 
 build sim_init/src/CMakeFiles/sim_init_lib.dir/TransmiterSimElement.cpp.obj: CXX_COMPILER__sim_init_lib_Debug C$:/code/lte_link_sim/sim_init/src/TransmiterSimElement.cpp || cmake_object_order_depends_target_sim_init_lib
   DEP_FILE = sim_init\src\CMakeFiles\sim_init_lib.dir\TransmiterSimElement.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
   OBJECT_FILE_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
 
@@ -182,7 +161,7 @@ build sim_init/src/CMakeFiles/sim_init_lib.dir/TransmiterSimElement.cpp.obj: CXX
 #############################################
 # Link the static library sim_init\src\libsim_init_lib.a
 
-build sim_init/src/libsim_init_lib.a: CXX_STATIC_LIBRARY_LINKER__sim_init_lib_Debug sim_init/src/CMakeFiles/sim_init_lib.dir/ChannelSimElement.cpp.obj sim_init/src/CMakeFiles/sim_init_lib.dir/CommonSimElement.cpp.obj sim_init/src/CMakeFiles/sim_init_lib.dir/ConfigurationFile.cpp.obj sim_init/src/CMakeFiles/sim_init_lib.dir/ENodeB.cpp.obj sim_init/src/CMakeFiles/sim_init_lib.dir/PDSCH.cpp.obj sim_init/src/CMakeFiles/sim_init_lib.dir/ReciverSimElement.cpp.obj sim_init/src/CMakeFiles/sim_init_lib.dir/SimCommand.cpp.obj sim_init/src/CMakeFiles/sim_init_lib.dir/TransmiterSimElement.cpp.obj
+build sim_init/src/libsim_init_lib.a: CXX_STATIC_LIBRARY_LINKER__sim_init_lib_Debug sim_init/src/CMakeFiles/sim_init_lib.dir/ChannelSimElement.cpp.obj sim_init/src/CMakeFiles/sim_init_lib.dir/CommonSimElement.cpp.obj sim_init/src/CMakeFiles/sim_init_lib.dir/ConfigurationFile.cpp.obj sim_init/src/CMakeFiles/sim_init_lib.dir/ReciverSimElement.cpp.obj sim_init/src/CMakeFiles/sim_init_lib.dir/SimCommand.cpp.obj sim_init/src/CMakeFiles/sim_init_lib.dir/TransmiterSimElement.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = sim_init\src\CMakeFiles\sim_init_lib.dir
   POST_BUILD = cd .
@@ -230,49 +209,49 @@ build cmake_object_order_depends_target_sim_core_lib: phony || sim_core/src/CMak
 build sim_core/src/CMakeFiles/sim_core_lib.dir/AWGNChannelGenerator.cpp.obj: CXX_COMPILER__sim_core_lib_Debug C$:/code/lte_link_sim/sim_core/src/AWGNChannelGenerator.cpp || cmake_object_order_depends_target_sim_core_lib
   DEP_FILE = sim_core\src\CMakeFiles\sim_core_lib.dir\AWGNChannelGenerator.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
   OBJECT_FILE_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
 
 build sim_core/src/CMakeFiles/sim_core_lib.dir/ChannelGenerator.cpp.obj: CXX_COMPILER__sim_core_lib_Debug C$:/code/lte_link_sim/sim_core/src/ChannelGenerator.cpp || cmake_object_order_depends_target_sim_core_lib
   DEP_FILE = sim_core\src\CMakeFiles\sim_core_lib.dir\ChannelGenerator.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
   OBJECT_FILE_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
 
 build sim_core/src/CMakeFiles/sim_core_lib.dir/FadingChannelGenerator.cpp.obj: CXX_COMPILER__sim_core_lib_Debug C$:/code/lte_link_sim/sim_core/src/FadingChannelGenerator.cpp || cmake_object_order_depends_target_sim_core_lib
   DEP_FILE = sim_core\src\CMakeFiles\sim_core_lib.dir\FadingChannelGenerator.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
   OBJECT_FILE_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
 
 build sim_core/src/CMakeFiles/sim_core_lib.dir/SimEntity.cpp.obj: CXX_COMPILER__sim_core_lib_Debug C$:/code/lte_link_sim/sim_core/src/SimEntity.cpp || cmake_object_order_depends_target_sim_core_lib
   DEP_FILE = sim_core\src\CMakeFiles\sim_core_lib.dir\SimEntity.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
   OBJECT_FILE_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
 
 build sim_core/src/CMakeFiles/sim_core_lib.dir/SimLogger.cpp.obj: CXX_COMPILER__sim_core_lib_Debug C$:/code/lte_link_sim/sim_core/src/SimLogger.cpp || cmake_object_order_depends_target_sim_core_lib
   DEP_FILE = sim_core\src\CMakeFiles\sim_core_lib.dir\SimLogger.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
   OBJECT_FILE_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
 
 build sim_core/src/CMakeFiles/sim_core_lib.dir/WaveformGenerator.cpp.obj: CXX_COMPILER__sim_core_lib_Debug C$:/code/lte_link_sim/sim_core/src/WaveformGenerator.cpp || cmake_object_order_depends_target_sim_core_lib
   DEP_FILE = sim_core\src\CMakeFiles\sim_core_lib.dir\WaveformGenerator.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
   OBJECT_FILE_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
 
 build sim_core/src/CMakeFiles/sim_core_lib.dir/WaveformReciver.cpp.obj: CXX_COMPILER__sim_core_lib_Debug C$:/code/lte_link_sim/sim_core/src/WaveformReciver.cpp || cmake_object_order_depends_target_sim_core_lib
   DEP_FILE = sim_core\src\CMakeFiles\sim_core_lib.dir\WaveformReciver.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
   OBJECT_FILE_DIR = sim_core\src\CMakeFiles\sim_core_lib.dir
 
@@ -324,6 +303,73 @@ build sim_core/src/rebuild_cache: phony sim_core/src/CMakeFiles/rebuild_cache.ut
 #############################################
 # Utility command for edit_cache
 
+build sim_lte/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\code\lte_link_sim\cmake-build-debug\sim_lte\src && "C:\Program Files\JetBrains\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build sim_lte/src/edit_cache: phony sim_lte/src/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target sim_lte_lib
+
+
+#############################################
+# Order-only phony target for sim_lte_lib
+
+build cmake_object_order_depends_target_sim_lte_lib: phony || sim_lte/src/CMakeFiles/sim_lte_lib.dir
+
+build sim_lte/src/CMakeFiles/sim_lte_lib.dir/ENodeB.cpp.obj: CXX_COMPILER__sim_lte_lib_Debug C$:/code/lte_link_sim/sim_lte/src/ENodeB.cpp || cmake_object_order_depends_target_sim_lte_lib
+  DEP_FILE = sim_lte\src\CMakeFiles\sim_lte_lib.dir\ENodeB.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
+  OBJECT_DIR = sim_lte\src\CMakeFiles\sim_lte_lib.dir
+  OBJECT_FILE_DIR = sim_lte\src\CMakeFiles\sim_lte_lib.dir
+
+build sim_lte/src/CMakeFiles/sim_lte_lib.dir/PDSCH.cpp.obj: CXX_COMPILER__sim_lte_lib_Debug C$:/code/lte_link_sim/sim_lte/src/PDSCH.cpp || cmake_object_order_depends_target_sim_lte_lib
+  DEP_FILE = sim_lte\src\CMakeFiles\sim_lte_lib.dir\PDSCH.cpp.obj.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
+  OBJECT_DIR = sim_lte\src\CMakeFiles\sim_lte_lib.dir
+  OBJECT_FILE_DIR = sim_lte\src\CMakeFiles\sim_lte_lib.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target sim_lte_lib
+
+
+#############################################
+# Link the static library sim_lte\src\libsim_lte_lib.a
+
+build sim_lte/src/libsim_lte_lib.a: CXX_STATIC_LIBRARY_LINKER__sim_lte_lib_Debug sim_lte/src/CMakeFiles/sim_lte_lib.dir/ENodeB.cpp.obj sim_lte/src/CMakeFiles/sim_lte_lib.dir/PDSCH.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = sim_lte\src\CMakeFiles\sim_lte_lib.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = sim_lte\src\libsim_lte_lib.a
+  TARGET_PDB = sim_lte_lib.a.dbg
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build sim_lte/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D C:\code\lte_link_sim\cmake-build-debug\sim_lte\src && "C:\Program Files\JetBrains\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\code\lte_link_sim -BC:\code\lte_link_sim\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build sim_lte/src/rebuild_cache: phony sim_lte/src/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/code/lte_link_sim/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
 build 3rd/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
   COMMAND = cmd.exe /C "cd /D C:\code\lte_link_sim\cmake-build-debug\3rd\src && "C:\Program Files\JetBrains\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
@@ -343,28 +389,28 @@ build cmake_object_order_depends_target_3rd_lib: phony || 3rd/src/CMakeFiles/3rd
 build 3rd/src/CMakeFiles/3rd_lib.dir/tinystr.cpp.obj: CXX_COMPILER__3rd_lib_Debug C$:/code/lte_link_sim/3rd/src/tinystr.cpp || cmake_object_order_depends_target_3rd_lib
   DEP_FILE = 3rd\src\CMakeFiles\3rd_lib.dir\tinystr.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = 3rd\src\CMakeFiles\3rd_lib.dir
   OBJECT_FILE_DIR = 3rd\src\CMakeFiles\3rd_lib.dir
 
 build 3rd/src/CMakeFiles/3rd_lib.dir/tinyxml.cpp.obj: CXX_COMPILER__3rd_lib_Debug C$:/code/lte_link_sim/3rd/src/tinyxml.cpp || cmake_object_order_depends_target_3rd_lib
   DEP_FILE = 3rd\src\CMakeFiles\3rd_lib.dir\tinyxml.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = 3rd\src\CMakeFiles\3rd_lib.dir
   OBJECT_FILE_DIR = 3rd\src\CMakeFiles\3rd_lib.dir
 
 build 3rd/src/CMakeFiles/3rd_lib.dir/tinyxmlerror.cpp.obj: CXX_COMPILER__3rd_lib_Debug C$:/code/lte_link_sim/3rd/src/tinyxmlerror.cpp || cmake_object_order_depends_target_3rd_lib
   DEP_FILE = 3rd\src\CMakeFiles\3rd_lib.dir\tinyxmlerror.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = 3rd\src\CMakeFiles\3rd_lib.dir
   OBJECT_FILE_DIR = 3rd\src\CMakeFiles\3rd_lib.dir
 
 build 3rd/src/CMakeFiles/3rd_lib.dir/tinyxmlparser.cpp.obj: CXX_COMPILER__3rd_lib_Debug C$:/code/lte_link_sim/3rd/src/tinyxmlparser.cpp || cmake_object_order_depends_target_3rd_lib
   DEP_FILE = 3rd\src\CMakeFiles\3rd_lib.dir\tinyxmlparser.cpp.obj.d
   FLAGS = -g -std=gnu++11
-  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/3rd/inc
+  INCLUDES = -IC:/code/lte_link_sim/lib -IC:/code/lte_link_sim/sim_init/inc -IC:/code/lte_link_sim/sim_core/inc -IC:/code/lte_link_sim/sim_lte/inc -IC:/code/lte_link_sim/3rd/inc
   OBJECT_DIR = 3rd\src\CMakeFiles\3rd_lib.dir
   OBJECT_FILE_DIR = 3rd\src\CMakeFiles\3rd_lib.dir
 
@@ -407,11 +453,15 @@ build libsim_core_lib.a: phony sim_core/src/libsim_core_lib.a
 
 build libsim_init_lib.a: phony sim_init/src/libsim_init_lib.a
 
+build libsim_lte_lib.a: phony sim_lte/src/libsim_lte_lib.a
+
 build lte_link_sim: phony lte_link_sim.exe
 
 build sim_core_lib: phony sim_core/src/libsim_core_lib.a
 
 build sim_init_lib: phony sim_init/src/libsim_init_lib.a
+
+build sim_lte_lib: phony sim_lte/src/libsim_lte_lib.a
 
 # =============================================================================
 # Folder targets.
@@ -421,7 +471,7 @@ build sim_init_lib: phony sim_init/src/libsim_init_lib.a
 #############################################
 # Folder: C:/code/lte_link_sim/cmake-build-debug
 
-build all: phony lte_link_sim.exe sim_init/src/all sim_core/src/all 3rd/src/all
+build all: phony lte_link_sim.exe sim_init/src/all sim_core/src/all sim_lte/src/all 3rd/src/all
 
 # =============================================================================
 
@@ -445,20 +495,27 @@ build sim_core/src/all: phony sim_core/src/libsim_core_lib.a
 build sim_init/src/all: phony sim_init/src/libsim_init_lib.a
 
 # =============================================================================
+
+#############################################
+# Folder: C:/code/lte_link_sim/cmake-build-debug/sim_lte/src
+
+build sim_lte/src/all: phony sim_lte/src/libsim_lte_lib.a
+
+# =============================================================================
 # Built-in targets
 
 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../3rd/src/CMakeLists.txt ../CMakeLists.txt ../sim_core/src/CMakeLists.txt ../sim_init/src/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../3rd/src/CMakeLists.txt ../CMakeLists.txt ../sim_core/src/CMakeLists.txt ../sim_init/src/CMakeLists.txt ../sim_lte/src/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../3rd/src/CMakeLists.txt ../CMakeLists.txt ../sim_core/src/CMakeLists.txt ../sim_init/src/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
+build ../3rd/src/CMakeLists.txt ../CMakeLists.txt ../sim_core/src/CMakeLists.txt ../sim_init/src/CMakeLists.txt ../sim_lte/src/CMakeLists.txt C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2021.3.2/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeCXXCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake: phony
 
 
 #############################################

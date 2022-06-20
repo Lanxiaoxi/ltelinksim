@@ -9,15 +9,36 @@
 
 #include <iostream>
 #include <memory>
+#include <map>
+#include <vector>
+#include <complex>
+#include <unordered_map>
 
 typedef int Int32;
 typedef unsigned int Uint32;
 typedef char Int8;
 typedef unsigned char Uint8;
 
+typedef std::vector<Uint8> VecUint8;
+typedef std::vector<Uint32> VecUint32;
+typedef std::vector<Int32> VecInt32;
+//typedef std::vector<Uint32> VecUint8;
+
+typedef std::vector<VecUint8> MtxUint8;
+
+typedef std::complex<float> Compl;
+typedef std::vector<std::complex<float>> VecCompl;
+
+#define NULL_ELEM 255
+#define NIL_ELEM 255
+
 
 
 //各种枚举类
+//仿真类型
+typedef enum {LTE = 0,WIFI = 1}SimSystem;
+//数据源
+typedef enum {ALL0 = 0,ALL1,PN9}DataSourceType;
 //循环前缀类型
 typedef enum { NORMAL = 1,EXTENDED = 0}CpType;
 //PHICH_RESOURCE

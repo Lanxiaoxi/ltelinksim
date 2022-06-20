@@ -2,15 +2,7 @@
 // Created by XPS on 2022/6/17.
 //
 
-#include "ENodeB.h"
-
-const PDSCH &ENodeB::getPdsch() const {
-    return pdsch_;
-}
-
-void ENodeB::setPdsch(const PDSCH &pdsch) {
-    pdsch_ = pdsch;
-}
+#include "../inc/ENodeB.h"
 
 Int32 ENodeB::getDlRb() const {
     return dl_rb;
@@ -90,4 +82,39 @@ TransmissionMode ENodeB::getTransmissionMode() const {
 
 void ENodeB::setTransmissionMode(TransmissionMode transmissionMode) {
     transmission_mode = transmissionMode;
+}
+
+void ENodeB::LoadConfiguration(std::shared_ptr<ConfigurationFile> configurationFile) {
+    this->setDlRb(configurationFile->DL_RB);
+    this->setNofCrsPort(configurationFile->crs_port);
+    this->setCellId(configurationFile->cell_id);
+    this->setFrameNumber(configurationFile->frame);
+    this->setSubframeNumber(configurationFile->subframe);
+    this->setNofCtrlRegionSym(configurationFile->ctrl_region_sym);
+    this->setCpType(configurationFile->cptype_);
+    this->setPhichResource(configurationFile->phichr_);
+    this->setPhichDuration(configurationFile->phichd_);
+    this->setTransmissionMode(configurationFile->tm_);
+
+    pdsch_.setDataSourceType(configurationFile->datatype);
+    pdsch_.setMcs({configurationFile->mcs1,configurationFile->mcs2});
+    pdsch_.setPrbSet(configurationFile->PRB_set_);
+    pdsch_.setNofLayer(configurationFile->layer);
+    pdsch_.setTm(configurationFile->tm_);
+
+
+}
+
+void ENodeB::GenerateSubframe() {
+
+    //只生成PDSCH
+    this->pdsch_.GenerateData();
+    this->pdsch_.GenerateInd();
+
+}
+
+void ENodeB::Init() {
+
+    pdsch_.Init();
+
 }

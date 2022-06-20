@@ -26,7 +26,9 @@ public:
 
     void InitSimEntity();
 
-    void run();
+    void Run();
+
+    void RunLTE();
 
 };
 

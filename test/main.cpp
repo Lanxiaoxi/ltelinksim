@@ -16,7 +16,7 @@ int main() {
     //创建仿真实体执行仿真
     std::shared_ptr<SimEntity> sim_entity = std::make_shared<SimEntity>(sim_command);
     sim_entity->InitSimEntity();
-    sim_entity->run();
+    sim_entity->Run();
 
 
 

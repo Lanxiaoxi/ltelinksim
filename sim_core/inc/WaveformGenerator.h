@@ -5,10 +5,15 @@
 #ifndef LTE_LINK_SIM_WAVEFORMGENERATOR_H
 #define LTE_LINK_SIM_WAVEFORMGENERATOR_H
 
+#include "ENodeB.h"
+
 
 class WaveformGenerator {
 public:
-    void InitWaveformGenerator();
+    void InitWaveformGenerator(ENodeB &eNodeB);
+
+    void Generate(ENodeB eNodeB);
+
 };
 
 

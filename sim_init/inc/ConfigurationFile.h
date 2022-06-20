@@ -11,7 +11,9 @@
 class ConfigurationFile {
 
 public:
+    SimSystem sim_system;
 
+    Int32 totalsf;
     Int32 DL_RB;
     Int32 cell_id;
     Int32 crs_port;
@@ -23,6 +25,12 @@ public:
     CpType phichd_;
     TransmissionMode tm_;
 
+    DataSourceType datatype;
+    Int32 mcs1;
+    Int32 mcs2;
+    Int32 layer;
+    std::pair<Int32,Int32> PRB_set_;
+
 
 public:
 
@@ -32,6 +40,9 @@ private:
     CpType String2EnumCptype(const char* cptype);
     PhichResource String2Enumphichr(const char* phichr);
     TransmissionMode String2Enumtm(const char* tm);
+    SimSystem String2EnumSimSystem(const char *sys);
+    DataSourceType String2EnumDataSourceType(const char *datatype);
+    void String2PairPRBset(const char *prbset,std::pair<Int32,Int32> &PRB_set);
 
 };
 

@@ -4,6 +4,16 @@
 
 #include "WaveformGenerator.h"
 
-void WaveformGenerator::InitWaveformGenerator() {
+void WaveformGenerator::InitWaveformGenerator(ENodeB &eNodeB) {
+    eNodeB.Init();
+
+
+}
+
+void WaveformGenerator::Generate(ENodeB eNodeB) {
+
+    eNodeB.GenerateSubframe();
+
+
 
 }

@@ -5,11 +5,14 @@
 #ifndef LTE_LINK_SIM_ENODEB_H
 #define LTE_LINK_SIM_ENODEB_H
 #include "PDSCH.h"
+#include "ConfigurationFile.h"
 
 class ENodeB {
 
-private:
+public:
     PDSCH pdsch_;
+
+    Int32 total_subframes;
 
 private:
     Int32 dl_rb;
@@ -32,7 +35,17 @@ private:
 
     TransmissionMode transmission_mode;
 public:
-    const PDSCH &getPdsch() const;
+    void LoadConfiguration(std::shared_ptr<ConfigurationFile> configurationFile);
+
+    void Init();
+
+    void GenerateSubframe();
+
+
+
+
+public:
+    const PDSCH getPdsch() const;
 
     void setPdsch(const PDSCH &pdsch);
 

@@ -7,13 +7,12 @@
 
 #include "SimElementInterface.h"
 
-#include "ENodeB.h"
+#include "../../sim_lte/inc/ENodeB.h"
 
 
 class TransmiterSimElement : public SimElementInterface{
-private:
+public:
     ENodeB eNodeB_; //当前发射机元素只支持ENB相关配置
-
 public:
 
     void LoadConfiguration(std::shared_ptr<ConfigurationFile> configurationFile) override;
